@@ -32,9 +32,17 @@ endif(CGM_CATIA)
 include_directories(
   ${cubit_util_SOURCE_DIR}
   ${cubit_util_BINARY_DIR}
+  ${cubit_geom_BINARY_DIR}
 )
 
 if(CGM_FACET)
+  # virtual depends on Cholla which is
+  # only built when Facet is build
+  if(CGM_VIRTUAL)
+    add_subdirectory(virtual)
+  endif(CGM_VIRTUAL)
+  add_subdirectory(facet)
+  add_subdirectory(facetbool)
   add_subdirectory(Cholla)
 endif()
 
@@ -197,15 +205,6 @@ install(
   LIBRARY DESTINATION ${CMAKE_INSTALL_BINARY_DIR} COMPONENT Runtime
   ARCHIVE DESTINATION ${CMAKE_INSTALL_BINARY_DIR} COMPONENT Development
 )
-
-if(CGM_FACET)
-  add_subdirectory(facetbool)
-  add_subdirectory(facet)
-endif(CGM_FACET)
-
-if(CGM_VIRTUAL)
-  add_subdirectory(virtual)
-endif(CGM_VIRTUAL)
 
 if(CGM_ACIS)
   add_subdirectory(ACIS)

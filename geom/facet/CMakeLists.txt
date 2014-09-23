@@ -40,6 +40,7 @@ set(FACET_HEADERS
 )
 
 include_directories(
+  ${cubit_geom_SOURCE_DIR}
   ${cubit_geom_SOURCE_DIR}/facetbool
   ${cubit_geom_SOURCE_DIR}/Cholla
 )

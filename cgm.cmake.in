@@ -27,7 +27,8 @@ CGM_INT_INCLUDE = -I@CGMA_SOURCE_DIR@ \
                   -I@CGMA_SOURCE_DIR@/geom/virtual \
                   -I@CGMA_SOURCE_DIR@/geom/facet \
                   -I@CGMA_SOURCE_DIR@/geom/facetbool \
-                  -I@CGMA_SOURCE_DIR@/geom/Cholla
+                  -I@CGMA_SOURCE_DIR@/geom/Cholla \
+                  -I@CGMA_SOURCE_DIR@/itaps
 
 # Pre-processor flags
 CGM_DEFINES = @CGMA_DEFINES@ @CGMA_ACIS_DEFINES@ @CGMA_OCC_DEFINES@

@@ -33,11 +33,10 @@ set(CGMA_DEPLIBS)
 # These will alter the environment with set(... PARENT_SCOPE),
 # and particularly CGMA_LIBS, CGMA_DEPLIBS.
 
-add_subdirectory(util)
-add_subdirectory(geom)
 add_subdirectory(init)
+add_subdirectory(geom)
 add_subdirectory(itaps)
-
+add_subdirectory(util)
 # Use the environment to configure the cgm.make file:
 # Create a list of paths to target libraries.
 get_property(CGMA_LIB_LOCS TARGET cubit_util PROPERTY LOCATION)
