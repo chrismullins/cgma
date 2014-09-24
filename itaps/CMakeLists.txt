@@ -48,6 +48,14 @@ install(
   COMPONENT Development
 )
 
+install(
+  FILES iGeom_protos.h
+  DESTINATION include
+  COMPONENT Development
+)
+
+set(IGEOM_CGM_TARGETS "-lcgma_init -lcholla -lcubit_facet -lcubit_facetboolstub -lcubit_geom -lcubit_occ -lcubit_util -lcubit_virtual -liGeom")
+set(IGEOM_OCE_LIB_DIR "${OCE_DIR}/..")
 string(REPLACE ";" " -l" CGM_EXT_LIBS "${CGMA_OCC_DEPLIBS}")
 set(CGM_EXT_LIBS "${CGM_EXT_LIBS}")
 set(abs_srcdir "${CMAKE_CURRENT_SOURCE_DIR}")
