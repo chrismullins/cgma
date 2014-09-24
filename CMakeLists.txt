@@ -33,6 +33,12 @@ set(CGMA_DEPLIBS)
 # These will alter the environment with set(... PARENT_SCOPE),
 # and particularly CGMA_LIBS, CGMA_DEPLIBS.
 
+set(cgma_init_SOURCE_DIR "${CMAKE_SOURCE_DIR}/init")
+set(cgma_init_BINARY_DIR "${CMAKE_BINARY_DIR}/init")
+set(cubit_geom_SOURCE_DIR "${CMAKE_SOURCE_DIR}/geom")
+set(cubit_geom_BINARY_DIR "${CMAKE_BINARY_DIR}/geom")
+set(cubit_util_SOURCE_DIR "${CMAKE_SOURCE_DIR}/util")
+set(cubit_util_BINARY_DIR "${CMAKE_SOURCE_DIR}/util")
 add_subdirectory(init)
 add_subdirectory(geom)
 set(CGMA_OCC_DEPLIBS ${CGMA_OCC_DEPLIBS})

@@ -2,7 +2,9 @@ project( cgma_init )
 
 include_directories(
   ${cubit_geom_SOURCE_DIR}
-  ${cubit_util_SOURCE_DIR}
+  ${CMAKE_SOURCE_DIR}/geom/virtual
+  #${cubit_util_SOURCE_DIR}
+  ${CMAKE_SOURCE_DIR}/util
   ${cubit_geom_SOURCE_DIR}/ACIS
   ${cubit_geom_SOURCE_DIR}/virtual
   ${cubit_geom_SOURCE_DIR}/facet
@@ -33,6 +35,9 @@ target_link_libraries(cgma_init
 set(CGMA_LIBS "${CGMA_LIBS}" cgma_init PARENT_SCOPE)
 set(CGMA_DEPLIBS "${CGMA_DEPLIBS}" PARENT_SCOPE)
 add_definitions(${CGMA_ACIS_DEFINES} ${CGMA_OCC_DEFINES})
+
+set(CMAKE_INSTALL_BINARY_DIR "lib" CACHE PATH "Install directory for binaries")
+set(CMAKE_INSTALL_INCLUDE_DIR "include" CACHE PATH "Install directory for headers")
 
 install(
   TARGETS cgma_init

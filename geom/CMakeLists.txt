@@ -196,9 +196,6 @@ if(CUBIT_LIBRARY_PROPERTIES)
   )
 endif(CUBIT_LIBRARY_PROPERTIES)
 
-set(CMAKE_INSTALL_BINARY_DIR "lib" CACHE PATH "Install directory for binaries")
-set(CMAKE_INSTALL_INCLUDE_DIR "include" CACHE PATH "Install directory for headers")
-
 install(
   TARGETS cubit_geom  ${CUBIT_GEOM_EXPORT_GROUP}
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINARY_DIR} COMPONENT Runtime
