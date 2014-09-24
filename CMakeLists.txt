@@ -35,6 +35,7 @@ set(CGMA_DEPLIBS)
 
 add_subdirectory(init)
 add_subdirectory(geom)
+set(CGMA_OCC_DEPLIBS ${CGMA_OCC_DEPLIBS})
 add_subdirectory(itaps)
 add_subdirectory(util)
 # Use the environment to configure the cgm.make file:

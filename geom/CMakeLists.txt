@@ -216,6 +216,7 @@ endif(CGM_SMLIB)
 
 if(CGM_OCC)
   add_subdirectory(OCC)
+  set(CGMA_OCC_DEPLIBS ${CGMA_OCC_DEPLIBS} PARENT_SCOPE)
 endif(CGM_OCC)
 
 if(CGM_GRANITE)

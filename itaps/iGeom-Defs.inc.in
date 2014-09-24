@@ -18,3 +18,7 @@ IGEOM_CXX_LTFLAGS = -R@abs_top_builddir@/.libs -R@abs_builddir@/.libs
 
 IGEOM_INCLUDEDIR = @abs_srcdir@
 # Below here goes the overrides that happen during installation
+IGEOM_CXX_LDFLAGS = -L@IGEOM_CXX_LDFLAGS@
+IGEOM_CXX_LTFLAGS = -R@IGEOM_CXX_LDFLAGS@
+IGEOM_INCLUDEDIR = -I@IGEOM_INCLUDEDIR@ 
+

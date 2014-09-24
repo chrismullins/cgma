@@ -47,3 +47,13 @@ install(
   DESTINATION include
   COMPONENT Development
 )
+
+string(REPLACE ";" " -l" CGM_EXT_LIBS "${CGMA_OCC_DEPLIBS}")
+set(CGM_EXT_LIBS "${CGM_EXT_LIBS}")
+set(abs_srcdir "${CMAKE_CURRENT_SOURCE_DIR}")
+set(abs_builddir "${CMAKE_CURRENT_BINARY_DIR}")
+set(IGEOM_CXX_LDFLAGS "${CMAKE_INSTALL_PREFIX}/lib")
+set(IGEOM_INCLUDEDIR  "${CMAKE_INSTALL_PREFIX}/include")
+configure_file( iGeom-Defs.inc.in
+  ${CMAKE_INSTALL_PREFIX}/lib/iGeom-Defs.inc
+  )
