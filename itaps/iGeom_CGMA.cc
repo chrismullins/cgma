@@ -41,6 +41,10 @@
 # define ITAPS_API
 #endif
 
+#ifndef INFINITY
+const double INFINITY = CUBIT_DBL_MAX;
+#endif
+
 const bool debug = false;
 
 #define RETURN(a) do {CGM_iGeom_setLastError((*err = a)); return; } while(false)
