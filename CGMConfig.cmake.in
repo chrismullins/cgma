@@ -1,0 +1,16 @@
+# Config file for CGM; use CMake find_package() function to pull this into your own CMakeLists.txt file
+
+# This file defines the following variables:
+# CGM_FOUND            - boolean indicating that CGM is found
+# CGM_INCLUDE_DIRS     - include directories from which to pick up MOAB includes
+# CGM_LIBRARIES        - libraries need to link to MOAB; use this in target_link_libraries for MOAB-dependent targets
+
+set(CGM_FOUND 1)
+
+set(CGM_USE_OCC @CGM_OCC@)
+
+# Library and include defs
+get_filename_component(CGM_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+
+set(CGM_INCLUDE_DIRS "@CMAKE_INSTALL_PREFIX@/include")
+set(CGM_LIBRARIES @CGMA_LIB_LIST@)

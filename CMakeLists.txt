@@ -66,11 +66,27 @@ configure_file(
   @ONLY
 )
 
+# Make a space-separated list instead
+set(CGMA_LIB_LIST "${CGMA_LIBS}")
+string(REPLACE ";" " " CGMA_LIB_LIST "${CGMA_LIB_LIST}")
+configure_file(
+  ${CGMA_SOURCE_DIR}/CGMConfig.cmake.in
+  ${CGMA_BINARY_DIR}/CGMConfig.cmake
+  @ONLY
+)
+
 # Install top-level headers:
 install(
   FILES
     ${CGMA_SOURCE_DIR}/cgm_version.h
     ${CGMA_BINARY_DIR}/cgm.make
+  DESTINATION include
+  COMPONENT Development
+)
+
+install(
+  FILES
+    ${CGMA_BINARY_DIR}/CGMConfig.cmake
   DESTINATION include
   COMPONENT Development
 )
