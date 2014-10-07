@@ -48,6 +48,9 @@ add_subdirectory(util)
 # Create a list of paths to target libraries.
 get_property(CGMA_LIB_LOCS TARGET cubit_util PROPERTY LOCATION)
 get_filename_component(CGMA_LIB_LOCS "${CGMA_LIB_LOCS}" DIRECTORY)
+# On Windows $(OutDir) gets appended for some reason.
+# I'd rather change it here than the FindCGM.cmake
+string(REPLACE "$(OutDir)" "" CGMA_LIB_LOCS "${CGMA_LIB_LOCS}")
 set(CGMA_LIB_LINKS)
 foreach(_lib ${CGMA_LIBS})
   get_property(_libloc TARGET ${_lib} PROPERTY OUTPUT_NAME)
