@@ -46,7 +46,7 @@ add_subdirectory(itaps)
 add_subdirectory(util)
 # Use the environment to configure the cgm.make file:
 # Create a list of paths to target libraries.
-get_property(CGMA_LIB_LOCS TARGET cubit_util PROPERTY LOCATION)
+set(CGMA_LIB_LOCS $<TARGET_FILE:cubit_util> LOCATION)
 get_filename_component(CGMA_LIB_LOCS "${CGMA_LIB_LOCS}" DIRECTORY)
 if(WIN32)
   # On Windows $(OutDir) gets appended for some reason.
